@@ -20,7 +20,9 @@ body.dark {
 	color: #ddd;
 }
 
-table, tr, td {
+table,
+tr,
+td {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -141,6 +143,15 @@ body.dark .custom h5 {
 	width: 100px;
 }
 
+#mistakes {
+	margin-top: 10px;
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 1.5em;
+	/* Make them visible */
+	min-height: 20px;
+}
+
 #new {
 	font-weight: bold;
 	padding: 5px 10px;
@@ -209,7 +220,8 @@ body.dark #puzzle td.key em {
 	color: #666;
 }
 
-#puzzle td.key.left em, #puzzle td.key.left strong {
+#puzzle td.key.left em,
+#puzzle td.key.left strong {
 	margin-right: 5px;
 	padding: 0 1px;
 }
@@ -252,6 +264,20 @@ body.dark #puzzle td.key em {
 #puzzle td.cell.s1 {
 	background-color: #ddd;
 	box-shadow: 0 0 5px 2px #ccc inset;
+	position: relative;
+	/* For pseudo-element positioning */
+}
+
+#puzzle td.cell.s1::after {
+	content: "✖";
+	/* Unicode Heavy Multiplication X */
+	color: #888;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 14px;
+	line-height: 1;
 }
 
 #puzzle td.cell.s2 {
@@ -273,6 +299,58 @@ body.dark #puzzle td.key em {
 	box-shadow: 3px 3px 5px #666 inset, -3px -3px 5px #000 inset;
 }
 
+#puzzle td.cell.error {
+	background-color: #ff0000 !important;
+	box-shadow: 0 0 5px 2px #900 inset !important;
+	animation: shake 0.5s;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
+}
+
 #puzzle.complete.perfect {
 	background-image: url(../images/rainbow.gif);
 }
@@ -284,4 +362,14 @@ body.dark #puzzle td.key em {
 #puzzle.complete.perfect td.cell.s2 {
 	background-color: transparent;
 	box-shadow: 1px 1px 5px #fff inset, -1px -1px 5px #666 inset;
+	border: none;
+}
+
+#mistakes {
+	margin-top: 10px;
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 1.5em;
+	/* Make them visible */
+	min-height: 20px;
 }

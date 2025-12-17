@@ -26,6 +26,15 @@
 					<input type="checkbox" id="dark" /><label for="dark"> Dark Mode</label><br />
 					<input type="checkbox" id="easy" checked /><label for="easy"> Show Crossouts</label>
 				</div>
+				<select id="difficulty">
+					<option value="easy">Easy</option>
+					<option value="medium">Medium</option>
+					<option value="hard">Hard</option>
+					<option value="extreme" selected>Extreme</option>
+					<option value="impossible">Impossible</option>
+				</select>
+				<span>Difficulty</span>
+				<br /><br />
 				<select id="dimensions">
 					<option value="5x5">5x5</option>
 					<option value="10x5">10x5</option>
@@ -51,6 +60,8 @@
 						<input type="text" id="customSeed" />
 						<button type="submit" id="customGame">Custom Game</button>
 					</form>
+
+					<div id="mistakes"></div>
 				</div>
 			</div>
 		</div>

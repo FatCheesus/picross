@@ -1,9 +1,9 @@
-Picross
-=======
+Picross Competitive
+===================
 
 This is a playable [picross puzzle](http://en.wikipedia.org/wiki/Nonogram) generator written in JavaScript
 
-You can access [an online version here](http://liouh.com/picross/)
+You can access [an online version here](https://fatcheesus.github.io/picross/)
 
 ### Instructions
 
@@ -16,6 +16,14 @@ On touch capable devices:
 
 * Tap: mark cell as active
 * Tap and hold: mark cell as inactive
+
+### Difficulty
+
+* Easy : No penalty for wrong answers
+* Medium : 3 penalties allowed
+* Hard : 1 penalty allowed
+* Extreme : 0 penalties allowed
+* Impossible : No right clicking allowed, no penalties allowed.
 
 ### Features
 
